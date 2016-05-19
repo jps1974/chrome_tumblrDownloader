@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+
+  "name": "TumblrDriver",
+  "description": "帮助你从Tumblr.com下载视频",
+  "version": "0.0.1",
+  "icons": { 
+    "48": "img/logo_128.png",
+    "128": "img/logo_128.png" 
+  },
+  "browser_action": {
+    "default_icon": "img/logo_128.png",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["js/eventPage.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.baidu.com/*"],
+      "js":["js/download.js"]
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "downloads"
+  ]
+}
