@@ -1,13 +1,15 @@
 chrome.runtime.onMessage.addListener(function(msg,sender){
 	console.log(msg);
 	console.log(sender);
-	chrome.downloads.download(
-		{
-			url:'https://pic3.zhimg.com/585d17746_l.jpg',
-			filename:'./tttt.jpg',
+	var source;
+	for(var i=0;i<3;i++){
+		source=msg.sourceArr[i];
+		chrome.downloads.download({
+			url:source,
+			filename:'./'+i+'.mp4',
 			saveAs:false
-		}, 
-		function(){
-
 		})
+	}
+	
 });
+console.log('ddd')
