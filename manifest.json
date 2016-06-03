@@ -18,7 +18,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://*.baidu.com/*"],
+      "matches": ["*://*.tumblr.com/*"],
       "js":["js/download.js"]
     }
   ],
